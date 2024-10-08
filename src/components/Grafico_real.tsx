@@ -5,7 +5,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
 const GraficoReal: React.FC = () => {
-  const [dadosGrafico, setDadosGrafico] = useState<any>(null);
+  const [dadosGrafico, setDadosGrafico] = useState<{ labels: string[]; datasets: { label: string; data: number[]; fill: boolean; borderColor: string; tension: number }[] } | null>(null);
 
   useEffect(() => {
     const buscarDadosReal = async () => {

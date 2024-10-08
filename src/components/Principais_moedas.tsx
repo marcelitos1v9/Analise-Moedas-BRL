@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
-import Image from 'next/image';
+
 import dynamic from 'next/dynamic';
+
 
 const ModalMoeda = dynamic(() => import('./ModalMoeda'), { ssr: false });
 
