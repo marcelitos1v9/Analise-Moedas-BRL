@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             <h4 className="text-lg font-semibold mb-2">Siga-nos</h4>
             <div className="flex justify-center space-x-4">
               <a href="https://www.instagram.com/marceloaugusto_oo/" className="text-2xl hover:text-blue-400"><FaInstagram /></a>
-              <a href="www.linkedin.com/in/marcelo-augusto-oo" className="text-2xl hover:text-blue-400"><FaLinkedin /></a>
+              <a href="https://www.linkedin.com/in/marcelo-augusto-oo" className="text-2xl hover:text-blue-400"><FaLinkedin /></a>
             </div>
           </div>
         </div>
