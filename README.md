@@ -40,7 +40,7 @@ A aplicação **FinançasFácil** é uma plataforma inovadora que simplifica a c
    ```
 2. **Navegue até o diretório do projeto**:
    ```bash
-   cd financasfacil
+   cd Analise-Moedas-BRL
    ```
 3. **Instale as dependências**:
    ```bash
