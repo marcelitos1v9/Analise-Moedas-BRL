@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { Line } from 'react-chartjs-2'; // Importando o gráfico
 
 interface ModalMoedaProps {
   moeda: string;
@@ -8,7 +9,8 @@ interface ModalMoedaProps {
 }
 
 const ModalMoeda: React.FC<ModalMoedaProps> = ({ moeda, dadosMoeda, onClose }) => {
-  const variacao = parseFloat(dadosMoeda.pctChange);
+  const [historico, setHistorico] = useState<any[]>([]);
+  const variacao = parseFloat(dadosMoeda.varBid);
   const corVariacao = variacao >= 0 ? 'text-green-500' : 'text-red-500';
 
   const nomeMoedas: { [key: string]: string } = {
@@ -33,9 +35,41 @@ const ModalMoeda: React.FC<ModalMoedaProps> = ({ moeda, dadosMoeda, onClose }) =
     CNY: 'CN'
   };
 
+  useEffect(() => {
+    const buscarHistorico = async () => {
+      try {
+        const resposta = await fetch(`https://economia.awesomeapi.com.br/json/daily/${moeda}-BRL/30`); // Alterado para 30 dias
+        const dados = await resposta.json();
+        setHistorico(dados);
+      } catch (erro) {
+        console.error('Erro ao buscar histórico:', erro);
+      }
+    };
+
+    buscarHistorico();
+  }, [moeda]);
+
+  // Preparando dados para o gráfico
+  const labels = historico && historico.length > 0 ? historico.map((data: any) => new Date(data.timestamp * 1000).toLocaleDateString()) : [];
+  const valores = historico && historico.length > 0 ? historico.map((data: any) => parseFloat(data.bid)) : [];
+
+  const dataGrafico = {
+    labels: labels,
+    datasets: [
+      {
+        label: `Preço de ${moeda} nos últimos 30 dias`, // Alterado para 30 dias
+        data: valores,
+        borderColor: 'rgba(75,192,192,1)',
+        backgroundColor: 'rgba(75,192,192,0.2)',
+        fill: false,
+        tension: 0.1
+      },
+    ],
+  };
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-6 max-w-md w-full">
+      <div className="bg-white rounded-lg p-6 max-w-2xl w-full"> {/* Aumentado o tamanho do modal */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center">
             <img
@@ -77,6 +111,10 @@ const ModalMoeda: React.FC<ModalMoedaProps> = ({ moeda, dadosMoeda, onClose }) =
           <p className="text-lg">
             <span className="font-semibold">Cotação para 1 BRL:</span> {(1 / parseFloat(dadosMoeda.bid)).toFixed(4)} {moeda}
           </p>
+        </div>
+        <div className="mb-4">
+          <h3 className="text-lg font-semibold">Análise dos Últimos 30 Dias</h3> {/* Alterado para 30 dias */}
+          <Line data={dataGrafico} />
         </div>
         <p className="text-sm text-gray-600">
           Última atualização: {new Date(dadosMoeda.timestamp * 1000).toLocaleString()}
