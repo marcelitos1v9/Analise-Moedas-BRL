@@ -1,40 +1,85 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# README da Aplicação FinançasFácil
 
-## Getting Started
+![Logo FinançasFácil](https://via.placeholder.com/150) <!-- Substitua pelo link da logo da sua aplicação -->
 
-First, run the development server:
+## Descrição
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A aplicação **FinançasFácil** é uma plataforma inovadora que simplifica a comparação de taxas de câmbio entre o Real e as principais moedas do mundo. Com uma interface intuitiva e responsiva, os usuários podem visualizar as cotações em tempo real e acompanhar as variações de cada moeda de forma fácil e rápida.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Funcionalidades
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+- **Comparação de Moedas**: 
+  - Visualize as taxas de câmbio entre o Real e diversas moedas, como Dólar, Euro, Libra, entre outras.
+  - Informações detalhadas sobre cada moeda, incluindo nome, sigla e variação percentual.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Atualização em Tempo Real**: 
+  - As cotações são atualizadas a cada 30 segundos, garantindo que você tenha sempre as informações mais recentes.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Modal de Detalhes**: 
+  - Clique em uma moeda para abrir um modal com informações detalhadas sobre a cotação e variação.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Tecnologias Utilizadas
 
-## Learn More
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Next.js**: Framework React para desenvolvimento de aplicações web.
+- **React Icons**: Biblioteca de ícones para React.
+- **API de Câmbio**: Utiliza a API da AwesomeAPI para buscar dados de câmbio.
 
-To learn more about Next.js, take a look at the following resources:
+## Como Executar a Aplicação
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Pré-requisitos
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
+- Um gerenciador de pacotes como o [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/).
 
-## Deploy on Vercel
+### Passos para Execução
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Clone o repositório**:
+   ```bash
+   git clone https://github.com/marcelitos1v9/Analise-Moedas-BRL.git
+   ```
+2. **Navegue até o diretório do projeto**:
+   ```bash
+   cd financasfacil
+   ```
+3. **Instale as dependências**:
+   ```bash
+   npm install
+   ```
+4. **Inicie a aplicação**:
+   ```bash
+   npm run dev
+   ```
+5. **Acesse a aplicação em seu navegador**: 
+   - Abra [http://localhost:3000](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Capturas de Tela
+
+### Tela Principal
+
+![Tela Principal](https://via.placeholder.com/800x400) <!-- Substitua pelo link da captura de tela da tela principal -->
+
+### Modal de Detalhes
+
+![Modal de Detalhes](https://via.placeholder.com/400x300) <!-- Substitua pelo link da captura de tela do modal de detalhes -->
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests. Para contribuir, siga os passos abaixo:
+
+1. Fork o repositório.
+2. Crie uma nova branch (`git checkout -b feature/nome-da-sua-feature`).
+3. Faça suas alterações e commit (`git commit -m 'Adicionando nova feature'`).
+4. Envie para o repositório remoto (`git push origin feature/nome-da-sua-feature`).
+5. Abra um Pull Request.
+
+## Licença
+
+Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## Contato
+
+Para dúvidas ou sugestões, entre em contato:
+- **Email**: marceloaugustocge@gmail.com
+- **LinkedIn**: [Meu linkedin](www.linkedin.com/in/marcelo-augusto-oo) <!-- Substitua pelo seu LinkedIn -->
+

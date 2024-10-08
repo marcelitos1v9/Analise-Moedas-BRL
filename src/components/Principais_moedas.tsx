@@ -46,7 +46,7 @@ const PrincipaisMoedas: React.FC = () => {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-4">
+    <div className="w-full max-w-4xl mx-auto p-4 text-gray-700">
       <h2 className="text-2xl font-bold mb-4 text-center">Comparação do Real com Principais Moedas</h2>
       {dadosMoedas ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
