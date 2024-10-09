@@ -1,6 +1,8 @@
 import React from 'react';
 import GraficoReal from './Grafico_real';
 import PrincipaisMoedas from './Principais_moedas';
+import PrincipaisAcoes from './PrincipaisAcoes';
+
 const Home = () => {
   return (
     <div className="flex flex-col min-h-screen">
@@ -9,6 +11,7 @@ const Home = () => {
         <p className="mb-4 text-center">Simplificando suas finanças, um passo de cada vez.</p>
         <GraficoReal />
         <PrincipaisMoedas />
+        <PrincipaisAcoes />
       </main>
     </div>
   );
