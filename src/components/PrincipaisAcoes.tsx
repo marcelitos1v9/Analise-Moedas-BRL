@@ -24,7 +24,7 @@ const PrincipaisAcoes: React.FC = () => {
     const buscarAcoes = async () => {
       const simbolos = ['PETR4', 'VALE3', 'ITUB4', 'BBDC4', 'ABEV3', 'BBAS3', 'MGLU3', 'WEGE3', 'RENT3', 'MELI34'];
       try {
-        const token = process.env.NEXT_PUBLIC_BRAPI_TOKEN;
+        const token = process.env.NEXT_PUBLIC_BRAPI_TOKEN || '';
         if (!token) {
           throw new Error('Token da API não encontrado');
         }
