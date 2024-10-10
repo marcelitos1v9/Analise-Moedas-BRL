@@ -74,4 +74,4 @@ Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICEN
 
 Para dúvidas ou sugestões, entre em contato:
 - **Email**: marceloaugustocge@gmail.com
-- **LinkedIn**: [Meu linkedin](www.linkedin.com/in/marcelo-augusto-oo)
+- **LinkedIn**: [Meu linkedin](https://www.linkedin.com/in/marcelo-augusto-oo/)
