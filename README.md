@@ -11,15 +11,27 @@ Você pode acessar a versão hospedada da aplicação em:
 
 ## Funcionalidades
 
-- **Comparação de Moedas**: 
-  - Visualize as taxas de câmbio entre o Real e diversas moedas, como Dólar, Euro, Libra, entre outras.
-  - Informações detalhadas sobre cada moeda, incluindo nome, sigla e variação percentual.
+### 💱 Comparação de Moedas
+- Visualize as taxas de câmbio entre o Real e diversas moedas, como Dólar, Euro, Libra, entre outras.
+- Informações detalhadas sobre cada moeda, incluindo nome, sigla e variação percentual.
 
-- **Atualização em Tempo Real**: 
-  - As cotações são atualizadas a cada 30 segundos, garantindo que você tenha sempre as informações mais recentes.
+### 📈 Visualização de Ações
+- Acompanhe as principais ações do mercado, como PETR4, VALE3, e ITUB4.
+- Informações detalhadas sobre cada ação, incluindo nome, símbolo, preço atual e variação percentual.
 
-- **Modal de Detalhes**: 
-  - Clique em uma moeda para abrir um modal com informações detalhadas sobre a cotação e variação.
+![Ações](https://example.com/imagem-acoes.png) <!-- Substitua pelo link da imagem real -->
+
+### ⏰ Atualização em Tempo Real
+- As cotações são atualizadas a cada 30 segundos, garantindo que você tenha sempre as informações mais recentes.
+
+### 📊 Modal de Detalhes
+- Clique em uma moeda ou ação para abrir um modal com informações detalhadas sobre a cotação e variação.
+
+![Modal de Detalhes](https://example.com/imagem-modal.png) <!-- Substitua pelo link da imagem real -->
+
+### 📈 Gráficos de Variação
+- Visualize gráficos que mostram a variação das moedas e ações ao longo do tempo, facilitando a análise de tendências.
+
 
 ## Tecnologias Utilizadas
 
@@ -27,6 +39,7 @@ Você pode acessar a versão hospedada da aplicação em:
 - **Next.js**: Framework React para desenvolvimento de aplicações web.
 - **React Icons**: Biblioteca de ícones para React.
 - **API de Câmbio**: Utiliza a API da AwesomeAPI para buscar dados de câmbio.
+- **Axios**: Biblioteca para fazer requisições HTTP.
 
 ## Como Executar a Aplicação
 
