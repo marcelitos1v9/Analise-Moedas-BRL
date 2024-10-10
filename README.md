@@ -1,4 +1,4 @@
-# README da Aplicação FinançasFácil
+# Aplicação FinançasFácil
 
 ## Descrição
 
