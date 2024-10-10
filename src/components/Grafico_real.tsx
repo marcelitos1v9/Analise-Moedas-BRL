@@ -26,13 +26,7 @@ const GraficoReal: React.FC = () => {
               label: 'Cotação do Real em relação ao Dólar',
               data: valores,
               fill: true,
-              backgroundColor: 'rgba(75, 192, 192, 0.2)',
               borderColor: 'rgba(75, 192, 192, 1)',
-              borderWidth: 2,
-              pointBackgroundColor: 'rgba(75, 192, 192, 1)',
-              pointBorderColor: '#fff',
-              pointHoverBackgroundColor: '#fff',
-              pointHoverBorderColor: 'rgba(75, 192, 192, 1)',
               tension: 0.4
             }
           ]
