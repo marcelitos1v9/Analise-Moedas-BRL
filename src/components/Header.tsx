@@ -1,59 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { FaCoins, FaChartLine, FaHome } from 'react-icons/fa';
 
-const Header: React.FC = () => {
-  const [cotacoes, setCotacoes] = useState({
-    dolar: 0,
-    euro: 0,
-    bitcoin: 0
-  });
+const Header: React.FC<{ setExibicao: (exibicao: string) => void }> = ({ setExibicao }) => {
+  const [ativo, setAtivo] = useState('moedas');
 
-  useEffect(() => {
-    const buscarCotacoes = async () => {
-      try {
-        const [respostaDolar, respostaEuro, respostaBitcoin] = await Promise.all([
-          fetch('https://economia.awesomeapi.com.br/USD/1'),
-          fetch('https://economia.awesomeapi.com.br/EUR/1'),
-          fetch('https://economia.awesomeapi.com.br/BTC/1')
-        ]);
-
-        const [dadosDolar, dadosEuro, dadosBitcoin] = await Promise.all([
-          respostaDolar.json(),
-          respostaEuro.json(),
-          respostaBitcoin.json()
-        ]);
-
-        setCotacoes({
-          dolar: parseFloat(dadosDolar[0].bid),
-          euro: parseFloat(dadosEuro[0].bid),
-          bitcoin: parseFloat(dadosBitcoin[0].bid)
-        });
-      } catch (erro) {
-        console.error('Erro ao buscar cotações:', erro);
-      }
-    };
-
-    buscarCotacoes();
-    // Atualiza as cotações a cada 5 minutos
-    const intervalo = setInterval(buscarCotacoes, 300000);
-
-    return () => clearInterval(intervalo);
-  }, []);
+  const handleClick = (exibicao: string) => {
+    setExibicao(exibicao);
+    setAtivo(exibicao);
+  };
 
   return (
-    <header className="bg-blue-600 text-white p-4">
+    <header className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-6 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-2xl font-bold">FinançasFácil</h1>
-        <div className="flex space-x-4">
-          <div>
-            <span className="font-semibold">Dólar:</span> R$ {cotacoes.dolar.toFixed(2)}
-          </div>
-          <div>
-            <span className="font-semibold">Euro:</span> R$ {cotacoes.euro.toFixed(2)}
-          </div>
-          <div>
-            <span className="font-semibold">Bitcoin:</span> R$ {cotacoes.bitcoin.toFixed(2)}
-          </div>
-        </div>
+        <Link href="/" className="flex items-center space-x-2 hover:text-blue-200 transition duration-300">
+          <FaHome className="text-2xl" />
+          <h1 className="text-3xl font-bold">FinançasFácil</h1>
+        </Link>
+        <nav>
+          <ul className="flex space-x-6">
+            <li>
+              <Link
+                href="#"
+                onClick={() => handleClick('moedas')}
+                className={`flex items-center space-x-2 py-2 px-4 rounded-full transition duration-300 ${
+                  ativo === 'moedas' ? 'bg-white text-blue-600' : 'hover:bg-blue-500'
+                }`}
+              >
+                <FaCoins />
+                <span>Moedas</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#"
+                onClick={() => handleClick('acoes')}
+                className={`flex items-center space-x-2 py-2 px-4 rounded-full transition duration-300 ${
+                  ativo === 'acoes' ? 'bg-white text-blue-600' : 'hover:bg-blue-500'
+                }`}
+              >
+                <FaChartLine />
+                <span>Ações</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
   );
