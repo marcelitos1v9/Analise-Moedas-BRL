@@ -28,7 +28,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="mt-8 pt-6 border-t border-blue-600 text-center">
-          <p className="text-sm">&copy; 2023 FinançasFácil. Todos os direitos reservados.</p>
+          <p className="text-sm">&copy; 2024 FinançasFácil. Todos os direitos reservados.</p>
           <p className="text-sm mt-1">Desenvolvido por Marcelo Augusto</p>
         </div>
       </div>
