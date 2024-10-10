@@ -1,10 +1,13 @@
 # README da Aplicação FinançasFácil
 
-![Logo FinançasFácil](https://via.placeholder.com/150) <!-- Substitua pelo link da logo da sua aplicação -->
-
 ## Descrição
 
 A aplicação **FinançasFácil** é uma plataforma inovadora que simplifica a comparação de taxas de câmbio entre o Real e as principais moedas do mundo. Com uma interface intuitiva e responsiva, os usuários podem visualizar as cotações em tempo real e acompanhar as variações de cada moeda de forma fácil e rápida.
+
+## Aplicação Hospedada
+
+Você pode acessar a versão hospedada da aplicação em:
+[https://analise-moedas-brl.vercel.app/](https://analise-moedas-brl.vercel.app/)
 
 ## Funcionalidades
 
@@ -53,16 +56,6 @@ A aplicação **FinançasFácil** é uma plataforma inovadora que simplifica a c
 5. **Acesse a aplicação em seu navegador**: 
    - Abra [http://localhost:3000](http://localhost:3000)
 
-## Capturas de Tela
-
-### Tela Principal
-
-![Tela Principal](https://via.placeholder.com/800x400) <!-- Substitua pelo link da captura de tela da tela principal -->
-
-### Modal de Detalhes
-
-![Modal de Detalhes](https://via.placeholder.com/400x300) <!-- Substitua pelo link da captura de tela do modal de detalhes -->
-
 ## Contribuição
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests. Para contribuir, siga os passos abaixo:
@@ -81,5 +74,4 @@ Este projeto está licenciado sob a MIT License - veja o arquivo [LICENSE](LICEN
 
 Para dúvidas ou sugestões, entre em contato:
 - **Email**: marceloaugustocge@gmail.com
-- **LinkedIn**: [Meu linkedin](www.linkedin.com/in/marcelo-augusto-oo) <!-- Substitua pelo seu LinkedIn -->
-
+- **LinkedIn**: [Meu linkedin](www.linkedin.com/in/marcelo-augusto-oo)
