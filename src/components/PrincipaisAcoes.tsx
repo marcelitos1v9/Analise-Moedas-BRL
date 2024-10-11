@@ -55,7 +55,7 @@ const PrincipaisAcoes: React.FC = () => {
   };
 
   if (carregando) {
-    return <div className="text-center">Carregando...</div>;
+    return <div className="text-center">Carregando ações...</div>; // Loader simples
   }
 
   if (erro) {

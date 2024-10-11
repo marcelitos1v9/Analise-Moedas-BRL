@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
-import { FaCoins, FaChartLine, FaHome, FaBars } from 'react-icons/fa';
+import { FaCoins, FaChartLine, FaHome, FaBars, FaNewspaper } from 'react-icons/fa'; // Importando ícone de jornal
 
 const Header: React.FC<{ setExibicao: (exibicao: string) => void }> = ({ setExibicao }) => {
-  const [ativo, setAtivo] = useState('moedas');
+  const [ativo, setAtivo] = useState('noticias'); // Alterado para 'noticias' como padrão
   const [menuAberto, setMenuAberto] = useState(false);
 
   const handleClick = (exibicao: string) => {
@@ -28,6 +28,18 @@ const Header: React.FC<{ setExibicao: (exibicao: string) => void }> = ({ setExib
         </button>
         <nav className={`w-full md:w-auto ${menuAberto ? 'block' : 'hidden'} md:block mt-4 md:mt-0`}>
           <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+            <li>
+              <Link
+                href="#"
+                onClick={() => handleClick('noticias')} // Novo link para notícias
+                className={`flex items-center space-x-2 py-2 px-4 rounded-full transition duration-300 ${
+                  ativo === 'noticias' ? 'bg-white text-blue-600' : 'hover:bg-blue-500'
+                }`}
+              >
+                <FaNewspaper /> {/* Adicionando o ícone de jornal */}
+                <span>Notícias</span> {/* Adicionando o texto para o novo link */}
+              </Link>
+            </li>
             <li>
               <Link
                 href="#"
@@ -56,7 +68,6 @@ const Header: React.FC<{ setExibicao: (exibicao: string) => void }> = ({ setExib
         </nav>
       </div>
     </header>
-  );
+  )
 };
-
 export default Header;

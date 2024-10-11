@@ -10,7 +10,7 @@ interface ModalMoedaProps {
 
 const ModalMoeda: React.FC<ModalMoedaProps> = ({ moeda, dadosMoeda, onClose }) => {
   const [historico, setHistorico] = useState<any[]>([]);
-  const variacao = parseFloat(dadosMoeda.varBid);
+  const variacao = parseFloat(dadosMoeda.varBid); // Variação em relação ao valor atual
   const corVariacao = variacao >= 0 ? 'text-green-500' : 'text-red-500';
 
   const nomeMoedas: { [key: string]: string } = {
@@ -50,15 +50,18 @@ const ModalMoeda: React.FC<ModalMoedaProps> = ({ moeda, dadosMoeda, onClose }) =
   }, [moeda]);
 
   // Preparando dados para o gráfico
-  const labels = historico && historico.length > 0 ? historico.map((data: any) => new Date(data.timestamp * 1000).toLocaleDateString()) : [];
+  const labels = historico && historico.length > 0 ? historico.map((data: any) => {
+    const date = new Date(data.timestamp * 1000);
+    return `${date.getDate()}/${date.getMonth() + 1}`; // Formato dia/mês
+  }) : [];
   const valores = historico && historico.length > 0 ? historico.map((data: any) => parseFloat(data.bid)) : [];
 
   const dataGrafico = {
-    labels: labels,
+    labels: labels.reverse(), // Inverte a ordem para que os dias mais antigos fiquem à esquerda
     datasets: [
       {
         label: `Preço de ${moeda} nos últimos 30 dias`, // Alterado para 30 dias
-        data: valores,
+        data: valores.reverse(), // Inverte a ordem dos valores para corresponder aos rótulos
         borderColor: 'rgba(75,192,192,1)',
         backgroundColor: 'rgba(75,192,192,0.2)',
         fill: false,
@@ -99,9 +102,6 @@ const ModalMoeda: React.FC<ModalMoedaProps> = ({ moeda, dadosMoeda, onClose }) =
             <span className="font-semibold mr-1">Variação:</span>
             {variacao >= 0 ? <FaArrowUp /> : <FaArrowDown />}
             {Math.abs(variacao).toFixed(2)}%
-          </p>
-          <p className="text-base">
-            <span className="font-semibold">Volume:</span> {parseInt(dadosMoeda.volume).toLocaleString()}
           </p>
         </div>
         <div className="mb-3">
