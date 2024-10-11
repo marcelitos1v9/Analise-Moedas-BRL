@@ -7,14 +7,14 @@ const Noticias: React.FC = () => {
   const [carregando, setCarregando] = useState(true);
   const [erro, setErro] = useState('');
   const [pagina, setPagina] = useState(1);
-  const noticiasPorPagina = 6; // Alterado para 3 notícias por linha
+  const noticiasPorPagina = 6; // Alterado para 6 notícias por página
 
   useEffect(() => {
     const buscarNoticiasSecundarias = async () => {
       try {
         const apiKey = process.env.NEXT_PUBLIC_NEWS_API; // A variável de ambiente na Vercel terá o mesmo nome
         if (!apiKey) {
-          throw new Error('API key não encontrada');
+          throw new Error('Chave da API não encontrada. Verifique suas variáveis de ambiente.');
         }
         const resposta = await axios.get(`https://newsapi.org/v2/everything?q=mercado+financeiro+brasil&apiKey=${apiKey}`);
         const dados = resposta.data.articles; // Pega todas as notícias
