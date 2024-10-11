@@ -102,7 +102,7 @@ const GraficoReal: React.FC = () => {
       {dadosGrafico ? (
         <Line data={dadosGrafico} options={opcoes} />
       ) : (
-        <p className="text-center text-gray-600">Carregando dados...</p>
+        <p className="text-center text-gray-600">Carregando dados do gráfico...</p> // Loader simples
       )}
     </div>
   );

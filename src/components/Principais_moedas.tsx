@@ -55,7 +55,7 @@ const PrincipaisMoedas: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {moedas.map((moeda) => {
             const dadoMoeda = dadosMoedas[`${moeda.sigla}BRL`];
-            const variacao = parseFloat(dadoMoeda.pctChange);
+            const variacao = parseFloat(dadoMoeda.pctChange); // Variação percentual
             const corVariacao = variacao >= 0 ? 'text-green-500' : 'text-red-500';
             return (
               <div 
