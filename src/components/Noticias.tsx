@@ -17,7 +17,12 @@ const Noticias: React.FC = () => {
           throw new Error('Token da API não encontrado');
         } // Certifique-se de que esta variável está definida no .env.local e nas configurações da Vercel
 
-        const resposta = await axios.get(`https://newsapi.org/v2/everything?q=mercado+financeiro+brasil&apiKey=${apiKey}`);
+        const resposta = await axios.get(`https://newsapi.org/v2/everything?q=mercado+financeiro+brasil&apiKey=${apiKey}`, {
+          headers: {
+            'Accept': 'application/json', // Adicione cabeçalhos conforme necessário
+            'User-Agent': 'FinançasFacil' // Substitua pelo nome do seu aplicativo
+          }
+        });
         
         // Verificando se a resposta contém artigos
         if (resposta.data.articles.length === 0) {
