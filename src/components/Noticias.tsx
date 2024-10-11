@@ -17,6 +17,12 @@ const Noticias: React.FC = () => {
           throw new Error('Chave da API não encontrada. Verifique suas variáveis de ambiente.');
         }
         const resposta = await axios.get(`https://newsapi.org/v2/everything?q=mercado+financeiro+brasil&apiKey=${apiKey}`);
+        
+        // Verificando se a resposta contém artigos
+        if (resposta.data.articles.length === 0) {
+          throw new Error('Nenhuma notícia encontrada.');
+        }
+
         const dados = resposta.data.articles; // Pega todas as notícias
         setNoticiasSecundarias(dados.filter((noticia: { title: string }) => noticia.title !== '[Removed]')); // Ignora notícias removidas
         setCarregando(false);
@@ -30,6 +36,10 @@ const Noticias: React.FC = () => {
     buscarNoticiasSecundarias();
   }, []);
 
+
+  if (carregando) {
+    return <div className="text-center">Carregando notícias...</div>; // Loader simples
+  }
 
   if (erro) {
     return <div className="text-center text-red-500">{erro}</div>;

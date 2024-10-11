@@ -15,7 +15,15 @@ const NoticiaPrincipal: React.FC = () => {
         if (!apiKey) {
           throw new Error('Chave da API não encontrada. Verifique suas variáveis de ambiente.');
         }
+        
+        // Fazendo a requisição para a API
         const resposta = await axios.get(`https://newsapi.org/v2/everything?q=mercado+financeiro+brasil&apiKey=${apiKey}`);
+        
+        // Verificando se a resposta contém artigos
+        if (resposta.data.articles.length === 0) {
+          throw new Error('Nenhuma notícia encontrada.');
+        }
+
         const dados = resposta.data.articles[0]; // Pega a primeira notícia
         setNoticia(dados);
         setCarregando(false);
