@@ -12,10 +12,11 @@ const Noticias: React.FC = () => {
   useEffect(() => {
     const buscarNoticiasSecundarias = async () => {
       try {
-        const apiKey = process.env.NEXT_PUBLIC_NEWS_API; // A variável de ambiente na Vercel terá o mesmo nome
+        const apiKey = process.env.NEXT_PUBLIC_NEWS_API || '';
         if (!apiKey) {
-          throw new Error('Chave da API não encontrada. Verifique suas variáveis de ambiente.');
-        }
+          throw new Error('Token da API não encontrado');
+        } // Certifique-se de que esta variável está definida no .env.local e nas configurações da Vercel
+
         const resposta = await axios.get(`https://newsapi.org/v2/everything?q=mercado+financeiro+brasil&apiKey=${apiKey}`);
         
         // Verificando se a resposta contém artigos

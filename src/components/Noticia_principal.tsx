@@ -11,10 +11,11 @@ const NoticiaPrincipal: React.FC = () => {
     const buscarNoticia = async () => {
       try {
         // A chave da API é acessada através de variáveis de ambiente
-        const apiKey = process.env.NEXT_PUBLIC_NEWS_API; // Certifique-se de que esta variável está definida no .env.local e nas configurações da Vercel
+        const apiKey = process.env.NEXT_PUBLIC_NEWS_API || '';
         if (!apiKey) {
-          throw new Error('Chave da API não encontrada. Verifique suas variáveis de ambiente.');
-        }
+          throw new Error('Token da API não encontrado');
+        } // Certifique-se de que esta variável está definida no .env.local e nas configurações da Vercel
+
         
         // Fazendo a requisição para a API
         const resposta = await axios.get(`https://newsapi.org/v2/everything?q=mercado+financeiro+brasil&apiKey=${apiKey}`);
